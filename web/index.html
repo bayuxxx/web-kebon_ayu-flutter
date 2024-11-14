@@ -30,6 +30,23 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>kebon_ayu</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEEjhY08eTPEBepmXie1xxCYcWH4PJ_lY"></script>
+  <script>
+    function initMap(mapElement) {
+      const baliLocation = { lat: -8.3405, lng: 115.0920 };
+      
+      const map = new google.maps.Map(mapElement, {
+        zoom: 10,
+        center: baliLocation,
+      });
+
+      const marker = new google.maps.Marker({
+        position: baliLocation,
+        map: map,
+        title: 'Bali'
+      });
+    }
+  </script>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>

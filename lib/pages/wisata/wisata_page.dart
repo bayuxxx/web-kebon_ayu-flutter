@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kebon_ayu/colors/colors.dart';
+import 'package:kebon_ayu/pages/profl_desa/profil_desa_page.dart';
 import 'package:kebon_ayu/widgets/custom_appbar.dart';
 import 'package:kebon_ayu/widgets/custom_drawer.dart';
 import 'package:kebon_ayu/widgets/custom_footer.dart';
 
-class ProfilDesaPage extends StatefulWidget {
-  const ProfilDesaPage({super.key});
+class WisataPage extends StatefulWidget {
+  const WisataPage({super.key});
 
   @override
-  State<ProfilDesaPage> createState() => _ProfilDesaPageState();
+  State<WisataPage> createState() => _WisataPageState();
 }
 
-class _ProfilDesaPageState extends State<ProfilDesaPage> {
+class _WisataPageState extends State<WisataPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,7 @@ class _ProfilDesaPageState extends State<ProfilDesaPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Profil Desa',
+                        'Wisata',
                         style: GoogleFonts.bentham(
                           fontSize: 128,
                           fontWeight: FontWeight.w600,
@@ -150,42 +151,6 @@ class _ProfilDesaPageState extends State<ProfilDesaPage> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class CustomContainer extends StatelessWidget {
-  final String nama;
-  final String title;
-
-  const CustomContainer({super.key, required this.nama, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 420.0,
-          width: double.infinity,
-          margin: const EdgeInsets.all(4.0),
-          color: Colors.white,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Column(
-            children: [
-              Text(
-                title,
-                style: const TextStyle(fontSize: 20),
-              ),
-              Text(
-                nama,
-                style: const TextStyle(fontSize: 16),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

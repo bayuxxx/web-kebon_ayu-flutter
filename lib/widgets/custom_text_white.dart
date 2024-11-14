@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextWhite extends StatelessWidget {
   final String text;
@@ -25,7 +26,7 @@ class CustomTextWhite extends StatelessWidget {
       textAlign: align,
       softWrap: softWrap,
       overflow: overflow,
-      style: TextStyle(
+      style: GoogleFonts.bentham(
         color: Colors.white,
         fontSize: size,
         fontWeight: weight,

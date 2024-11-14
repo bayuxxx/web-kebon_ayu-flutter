@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kebon_ayu/colors/colors.dart';
 import 'package:kebon_ayu/pages/widgets/hero_section.dart';
+import 'package:kebon_ayu/pages/widgets/maps_section.dart';
 import 'package:kebon_ayu/widgets/custom_appbar.dart';
+import 'package:kebon_ayu/widgets/custom_drawer.dart';
 import 'package:kebon_ayu/widgets/custom_footer.dart';
 import 'package:kebon_ayu/widgets/custom_text_white.dart';
 
@@ -40,35 +42,7 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(),
-      endDrawer: Drawer(
-        backgroundColor: Colors.white.withOpacity(0.8),
-        surfaceTintColor: Colors.white,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            ListTile(
-              title: const Text('Profil Desa'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Tradisi Budaya'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Wisata'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Kuliner'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Tentang Kami'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
+      endDrawer: const CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -117,7 +91,7 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                     const SizedBox(height: 40),
                     const Divider(color: Colors.white),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                   ],
                 ),
               ),
@@ -135,7 +109,7 @@ class _LandingPageState extends State<LandingPage> {
                 padding: getResponsivePadding(context),
                 child: Column(
                   children: [
-                    const SizedBox(height: 80),
+                    const SizedBox(height: 70),
                     CustomTextWhite(
                       text: 'TENTANG DESA',
                       size: getResponsiveFontSize(context, 24),
@@ -172,161 +146,11 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             //maps section
-            Container(
-              width: double.infinity,
-              height: 600,
-              color: Colors.white,
+            const Padding(
+              padding: EdgeInsets.all(50),
+              child: MapsSection(),
             ),
-            //Footer Section
-            // Container(
-            //   width: double.infinity,
-            //   color: Colors.grey,
-            //   height: 500,
-            //   padding: const EdgeInsets.symmetric(horizontal: 60),
-            //   child: Column(
-            //     children: [
-            //       const SizedBox(height: 20),
-            //       Row(
-            //         children: [
-            //           Image.asset('assets/logo_mini.png'),
-            //           Row(
-            //             children: [
-            //               const SizedBox(width: 40),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: const CustomTextWhite(
-            //                   text: 'Profil Desa',
-            //                   size: 20,
-            //                   weight: FontWeight.w400,
-            //                 ),
-            //               ),
-            //               const SizedBox(width: 40),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: const CustomTextWhite(
-            //                   text: 'Tradisi Budaya',
-            //                   size: 20,
-            //                   weight: FontWeight.w400,
-            //                 ),
-            //               ),
-            //               const SizedBox(width: 40),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: const CustomTextWhite(
-            //                   text: 'Wisata',
-            //                   size: 20,
-            //                   weight: FontWeight.w400,
-            //                 ),
-            //               ),
-            //               const SizedBox(width: 40),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: const CustomTextWhite(
-            //                   text: 'Kuliner',
-            //                   size: 20,
-            //                   weight: FontWeight.w400,
-            //                 ),
-            //               ),
-            //               const SizedBox(width: 40),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: const CustomTextWhite(
-            //                   text: 'Tentang Kami',
-            //                   size: 20,
-            //                   weight: FontWeight.w400,
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ],
-            //       ),
-            //       const Divider(
-            //         color: AppColors.putih,
-            //       ),
-            //       const SizedBox(height: 20),
-            //       Row(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //         children: [
-            //           Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               const CustomTextWhite(
-            //                 text: 'Saran & Masukan',
-            //                 size: 20,
-            //                 weight: FontWeight.w400,
-            //               ),
-            //               const SizedBox(height: 20),
-            //               Container(
-            //                 width: 390,
-            //                 height: 120,
-            //                 color: Colors.white,
-            //                 child: const TextField(
-            //                   maxLines: null,
-            //                   expands: true,
-            //                   decoration: InputDecoration(
-            //                     contentPadding: EdgeInsets.all(10),
-            //                   ),
-            //                 ),
-            //               ),
-            //               const SizedBox(height: 20),
-            //               InkWell(
-            //                 onTap: () {},
-            //                 child: Container(
-            //                   padding: const EdgeInsets.symmetric(
-            //                     horizontal: 30,
-            //                   ),
-            //                   decoration: BoxDecoration(
-            //                       border: Border.all(
-            //                           color: AppColors.putih, width: 1)),
-            //                   child: const CustomTextWhite(
-            //                     text: 'Kirim',
-            //                     size: 24,
-            //                     weight: FontWeight.w400,
-            //                   ),
-            //                 ),
-            //               )
-            //             ],
-            //           ),
-            //           Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               const CustomTextWhite(
-            //                 text: 'Kontak Kami',
-            //                 size: 20,
-            //                 weight: FontWeight.w400,
-            //               ),
-            //               SizedBox(height: 10),
-            //               const CustomTextWhite(
-            //                 text: '08986648730',
-            //                 size: 20,
-            //                 weight: FontWeight.w400,
-            //               ),
-            //               SizedBox(height: 20),
-            //               Row(
-            //                 children: [
-            //                   IconButton(
-            //                     icon: const FaIcon(FontAwesomeIcons.instagram),
-            //                     onPressed: () {},
-            //                   ),
-            //                   IconButton(
-            //                     icon: const FaIcon(FontAwesomeIcons.facebook),
-            //                     onPressed: () {},
-            //                   ),
-            //                   IconButton(
-            //                     icon: const FaIcon(FontAwesomeIcons.twitter),
-            //                     onPressed: () {},
-            //                   ),
-            //                 ],
-            //               )
-            //             ],
-            //           )
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // )
-            CustomFooter()
+            const CustomFooter()
           ],
         ),
       ),

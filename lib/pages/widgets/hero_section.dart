@@ -87,7 +87,7 @@ class _HeroSectionState extends State<HeroSection>
                 position: _slideAnimation,
                 child: Text(
                   'SELAMAT DATANG',
-                  style: TextStyle(
+                  style: GoogleFonts.bentham(
                     color: Colors.white,
                     fontSize: getResponsiveFontSize(context, 64),
                     fontWeight: FontWeight.w400,
@@ -105,7 +105,7 @@ class _HeroSectionState extends State<HeroSection>
                 position: _slideAnimation,
                 child: Text(
                   'DI DESA WISATA KEBON AYU',
-                  style: TextStyle(
+                  style: GoogleFonts.bentham(
                     color: Colors.white,
                     fontSize: getResponsiveFontSize(context, 64),
                     fontWeight: FontWeight.w400,
